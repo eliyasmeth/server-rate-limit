@@ -30,8 +30,8 @@ done
 
 wait
 
-echo "Sending $CONCURRENT_REQUESTS+1 requests to /rate-limit endpoint without Authorization Header"
-for ((i=1; i<=$CONCURRENT_REQUESTS+1; i++)); do
+echo "Sending $CONCURRENT_REQUESTS requests to /rate-limit endpoint without Authorization Header"
+for ((i=1; i<=$CONCURRENT_REQUESTS; i++)); do
     curl -w " %{http_code} \n" "$URL" &
 done
 
